@@ -1,0 +1,1153 @@
+/**
+ * ============================================================================
+ * AI PROFIT ADVANTAGE - ENTERPRISE BASE STYLESHEET
+ * ============================================================================
+ * 
+ * Production-ready Global Base Styles for the AI Profit Advantage platform.
+ * 
+ * This stylesheet defines default styling for all HTML elements.
+ * It serves as the global visual foundation built on top of the CSS reset.
+ * 
+ * Architecture:
+ * - Imports: variables.css, reset.css
+ * - Scope: Global element defaults only
+ * - Pattern: Mobile-first responsive design
+ * - Accessibility: WCAG 2.1 Level AA compliant
+ * - Performance: Optimized for speed and maintainability
+ * 
+ * Structure:
+ * - Document flow elements
+ * - Typography hierarchy
+ * - Form elements
+ * - Media elements
+ * - Semantic elements
+ * - Layout containers
+ * 
+ * Import Order in Main Stylesheet:
+ * 1. reset.css (imports variables.css)
+ * 2. base.css (this file)
+ * 3. component-specific styles
+ * 4. utility classes
+ * 5. theme overrides
+ * 
+ * @version 1.0.0
+ * @last-updated 2026-07-12
+ * @author AI Profit Advantage Design System
+ * ============================================================================
+ */
+
+/* ==========================================================================
+   SECTION 1: IMPORTS
+   ==========================================================================
+   
+   Import all design system dependencies.
+   (Note: reset.css already imports variables.css, but we import here for clarity)
+*/
+
+@import 'reset.css';
+
+/* ==========================================================================
+   SECTION 2: HTML & BODY - DOCUMENT FOUNDATION
+   ==========================================================================
+   
+   Global document flow and foundational styles.
+   Sets baseline typography, colors, and responsive behavior.
+*/
+
+html {
+  /* Root font size for rem calculations */
+  font-size: var(--font-size-base);
+  
+  /* Improve text rendering across browsers */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Enable smooth scrolling behavior */
+  scroll-behavior: smooth;
+  
+  /* Set scroll padding for fixed headers */
+  scroll-padding-top: var(--spacing-20);
+}
+
+body {
+  /* Typography foundation */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: var(--letter-spacing-normal);
+  
+  /* Color scheme */
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  
+  /* Text rendering optimization */
+  font-feature-settings: 'kern' 1;
+  font-kerning: auto;
+  text-rendering: optimizeLegibility;
+  
+  /* Prevent layout shifts */
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   SECTION 3: TYPOGRAPHY - HEADING HIERARCHY
+   ==========================================================================
+   
+   Establish visual hierarchy and readability for heading elements.
+   Modular scale maintains consistent spacing and proportions.
+*/
+
+/* H1 - Page Title / Hero Heading */
+h1 {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-6) 0;
+}
+
+/* Responsive H1 */
+@media (max-width: 640px) {
+  h1 {
+    font-size: var(--font-size-4xl);
+    margin: 0 0 var(--spacing-4) 0;
+  }
+}
+
+/* H2 - Section Heading */
+h2 {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-primary);
+  margin: var(--spacing-8) 0 var(--spacing-4) 0;
+}
+
+@media (max-width: 640px) {
+  h2 {
+    font-size: var(--font-size-3xl);
+    margin: var(--spacing-6) 0 var(--spacing-3) 0;
+  }
+}
+
+/* H3 - Subsection Heading */
+h3 {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-primary);
+  margin: var(--spacing-6) 0 var(--spacing-3) 0;
+}
+
+@media (max-width: 640px) {
+  h3 {
+    font-size: var(--font-size-2xl);
+    margin: var(--spacing-4) 0 var(--spacing-2) 0;
+  }
+}
+
+/* H4 - Minor Heading */
+h4 {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-text-primary);
+  margin: var(--spacing-5) 0 var(--spacing-2) 0;
+}
+
+/* H5 - Inline Heading */
+h5 {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-text-primary);
+  margin: var(--spacing-4) 0 var(--spacing-2) 0;
+}
+
+/* H6 - Small Heading */
+h6 {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  margin: var(--spacing-4) 0 var(--spacing-2) 0;
+}
+
+/* ==========================================================================
+   SECTION 4: TYPOGRAPHY - PARAGRAPHS & TEXT
+   ==========================================================================
+   
+   Define default paragraph and text element styling for optimal readability.
+*/
+
+p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-4) 0;
+}
+
+/* Large paragraph text */
+p.lead,
+.lead {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-normal);
+  margin: 0 0 var(--spacing-6) 0;
+}
+
+/* Small/secondary text */
+small {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-tertiary);
+}
+
+/* Strong/Bold text */
+strong,
+b {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+/* Emphasis text */
+em,
+i {
+  font-style: italic;
+  color: var(--color-text-secondary);
+}
+
+/* Mark/Highlight text */
+mark {
+  background-color: var(--color-brand-accent-lighter);
+  color: var(--color-brand-accent-dark);
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+}
+
+/* Deleted text */
+del {
+  text-decoration: line-through;
+  color: var(--color-text-tertiary);
+  opacity: var(--opacity-70);
+}
+
+/* Inserted text */
+ins {
+  background-color: var(--color-success-bg);
+  color: var(--color-success-dark);
+  text-decoration: none;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+}
+
+/* Abbreviation */
+abbr[title] {
+  border-bottom: 1px dotted var(--color-border-default);
+  cursor: help;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   SECTION 5: TYPOGRAPHY - LINKS
+   ==========================================================================
+   
+   Define consistent link styling with accessibility focus.
+   Ensures visual feedback and keyboard navigation support.
+*/
+
+a {
+  color: var(--color-text-link);
+  text-decoration: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: var(--transition-color);
+  
+  /* Improve touch targets on mobile */
+  min-height: 2.5rem;
+  display: inline-block;
+  padding: var(--spacing-1) 0;
+}
+
+/* Link hover state */
+a:hover {
+  color: var(--color-text-link-hover);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* Link active state */
+a:active {
+  opacity: var(--opacity-70);
+}
+
+/* Visited links - maintain same color for accessibility */
+a:visited {
+  color: var(--color-text-link);
+}
+
+/* Focus state - keyboard navigation */
+a:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+/* ==========================================================================
+   SECTION 6: TYPOGRAPHY - LISTS
+   ==========================================================================
+   
+   Define default list styling for ordered, unordered, and description lists.
+*/
+
+/* Unordered list */
+ul {
+  margin: 0 0 var(--spacing-6) 0;
+  padding: 0 0 0 var(--spacing-6);
+}
+
+ul li {
+  margin: 0 0 var(--spacing-2) 0;
+  padding: 0;
+  color: var(--color-text-primary);
+  line-height: var(--line-height-relaxed);
+}
+
+ul li:before {
+  content: '•';
+  margin-right: var(--spacing-3);
+  color: var(--color-brand-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Ordered list */
+ol {
+  margin: 0 0 var(--spacing-6) 0;
+  padding: 0 0 0 var(--spacing-6);
+  list-style-type: decimal;
+}
+
+ol li {
+  margin: 0 0 var(--spacing-2) 0;
+  padding: 0;
+  color: var(--color-text-primary);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Nested lists */
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin: var(--spacing-2) 0 0 0;
+  padding: 0 0 0 var(--spacing-6);
+}
+
+/* Description list */
+dl {
+  margin: 0 0 var(--spacing-6) 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--spacing-3) var(--spacing-6);
+}
+
+dt {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+dd {
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+/* ==========================================================================
+   SECTION 7: BUTTONS
+   ==========================================================================
+   
+   Define default button styling as a foundation for button components.
+*/
+
+button {
+  appearance: none;
+  -webkit-appearance: none;
+  
+  /* Typography */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--button-padding-md);
+  min-height: 2.5rem;
+  
+  /* Styling */
+  background-color: var(--color-brand-primary);
+  color: var(--color-text-inverted);
+  border: 2px solid var(--color-brand-primary);
+  border-radius: var(--button-border-radius);
+  
+  /* Interaction */
+  cursor: pointer;
+  transition: var(--button-transition);
+  user-select: none;
+  text-align: center;
+  
+  /* Improve touch target */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Button hover state */
+button:hover:not(:disabled) {
+  background-color: var(--color-brand-primary-dark);
+  border-color: var(--color-brand-primary-dark);
+  box-shadow: var(--shadow-primary);
+  transform: translateY(-2px);
+}
+
+/* Button active state */
+button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Button focus state */
+button:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 2px;
+}
+
+/* Button disabled state */
+button:disabled {
+  opacity: var(--opacity-50);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ==========================================================================
+   SECTION 8: FORMS - INPUT ELEMENTS
+   ==========================================================================
+   
+   Define consistent form input styling for text fields, number inputs, etc.
+*/
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='search'],
+input[type='url'],
+input[type='tel'],
+input[type='number'],
+input[type='date'],
+input[type='time'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='week'],
+input[type='color'],
+textarea,
+select {
+  /* Typography */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-primary);
+  
+  /* Layout */
+  width: 100%;
+  padding: var(--input-padding);
+  margin: 0 0 var(--spacing-4) 0;
+  
+  /* Styling */
+  background-color: var(--color-bg-primary);
+  border: var(--input-border-width) solid var(--input-border-color);
+  border-radius: var(--input-border-radius);
+  
+  /* Interaction */
+  appearance: none;
+  -webkit-appearance: none;
+  transition: var(--input-transition);
+  box-shadow: none;
+}
+
+/* Input focus state */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-border-focus);
+  box-shadow: var(--input-focus-ring);
+  outline: none;
+}
+
+/* Input placeholder text */
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-text-tertiary);
+  opacity: 1;
+}
+
+/* Input disabled state */
+input:disabled,
+textarea:disabled,
+select:disabled {
+  background-color: var(--color-bg-secondary);
+  opacity: var(--opacity-50);
+  cursor: not-allowed;
+}
+
+/* Textarea specific */
+textarea {
+  resize: vertical;
+  min-height: 8rem;
+  font-family: var(--font-family-base);
+}
+
+/* Select dropdown */
+select {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233f4654' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right var(--spacing-3) center;
+  background-size: 1.5em 1.5em;
+  padding-right: var(--spacing-10);
+}
+
+/* ==========================================================================
+   SECTION 9: FORMS - LABELS & FIELDSETS
+   ==========================================================================
+   
+   Define consistent label and fieldset styling for form organization.
+*/
+
+label {
+  display: block;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-2) 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Required field indicator */
+label .required,
+label[aria-required='true']::after {
+  content: ' *';
+  color: var(--color-danger);
+}
+
+/* Fieldset container */
+fieldset {
+  margin: 0 0 var(--spacing-6) 0;
+  padding: var(--spacing-6);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-secondary);
+}
+
+/* Fieldset legend */
+legend {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  padding: 0 var(--spacing-2);
+  margin: 0 0 var(--spacing-4) 0;
+}
+
+/* Form group wrapper */
+.form-group {
+  margin: 0 0 var(--spacing-6) 0;
+}
+
+/* ==========================================================================
+   SECTION 10: FORMS - CHECKBOXES & RADIO BUTTONS
+   ==========================================================================
+   
+   Define custom checkbox and radio button styling.
+*/
+
+input[type='checkbox'],
+input[type='radio'] {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: var(--spacing-1) var(--spacing-3) var(--spacing-1) 0;
+  cursor: pointer;
+  accent-color: var(--color-brand-primary);
+  vertical-align: middle;
+}
+
+input[type='checkbox']:focus-visible,
+input[type='radio']:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 2px;
+}
+
+input[type='checkbox']:disabled,
+input[type='radio']:disabled {
+  opacity: var(--opacity-50);
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   SECTION 11: TABLES
+   ==========================================================================
+   
+   Define default table styling for structured data presentation.
+*/
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0 0 var(--spacing-6) 0;
+  font-size: var(--font-size-base);
+  overflow-x: auto;
+}
+
+/* Responsive table wrapper */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 0 var(--spacing-6) 0;
+}
+
+/* Table header */
+thead {
+  background-color: var(--color-bg-secondary);
+  border-bottom: 2px solid var(--color-border-default);
+}
+
+/* Table body */
+tbody {
+  background-color: var(--color-bg-primary);
+}
+
+/* Table footer */
+tfoot {
+  background-color: var(--color-bg-secondary);
+  border-top: 2px solid var(--color-border-default);
+}
+
+/* Table cells - Header */
+th {
+  padding: var(--spacing-4);
+  text-align: left;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  vertical-align: middle;
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  font-size: var(--font-size-sm);
+}
+
+/* Table cells - Data */
+td {
+  padding: var(--spacing-4);
+  border-bottom: 1px solid var(--color-border-light);
+  color: var(--color-text-primary);
+  vertical-align: middle;
+  line-height: var(--line-height-relaxed);
+}
+
+/* Table row hover state */
+tbody tr:hover {
+  background-color: var(--color-bg-secondary);
+  transition: background-color var(--duration-fast) var(--ease-in-out);
+}
+
+/* Striped table rows */
+tbody tr:nth-child(even) {
+  background-color: var(--color-bg-tertiary);
+}
+
+/* Table caption */
+caption {
+  caption-side: top;
+  padding: var(--spacing-3) var(--spacing-4);
+  text-align: left;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--spacing-4) 0;
+}
+
+/* ==========================================================================
+   SECTION 12: BLOCKQUOTES & CITATIONS
+   ==========================================================================
+   
+   Define styling for quoted and cited content.
+*/
+
+blockquote {
+  margin: var(--spacing-6) 0;
+  padding: var(--spacing-4) var(--spacing-6);
+  padding-left: var(--spacing-6);
+  border-left: 4px solid var(--color-brand-primary);
+  background-color: var(--color-bg-secondary);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  font-style: italic;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+/* Blockquote attribution */
+blockquote cite,
+blockquote footer {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-style: normal;
+  color: var(--color-text-tertiary);
+  margin: var(--spacing-3) 0 0 0;
+}
+
+blockquote cite:before {
+  content: '— ';
+}
+
+/* ==========================================================================
+   SECTION 13: CODE & PREFORMATTED TEXT
+   ==========================================================================
+   
+   Define styling for code blocks and inline code.
+*/
+
+code {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+  color: var(--color-brand-accent);
+  background-color: var(--color-bg-tertiary);
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+  word-break: break-word;
+  display: inline-block;
+}
+
+/* Pre-formatted text block */
+pre {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-secondary);
+  padding: var(--spacing-6);
+  border-radius: var(--radius-lg);
+  margin: 0 0 var(--spacing-6) 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--color-border-light);
+}
+
+/* Code inside pre */
+pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Keyboard input representation */
+kbd {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  background-color: var(--color-neutral-100);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-1) var(--spacing-2);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Sample output representation */
+samp {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+  color: var(--color-success);
+  background-color: var(--color-success-bg);
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+}
+
+/* ==========================================================================
+   SECTION 14: HORIZONTAL RULE
+   ==========================================================================
+   
+   Define styling for horizontal dividers.
+*/
+
+hr {
+  height: 1px;
+  border: none;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-border-light),
+    transparent
+  );
+  margin: var(--spacing-8) 0;
+}
+
+/* ==========================================================================
+   SECTION 15: MEDIA - IMAGES
+   ==========================================================================
+   
+   Define responsive image styling for optimal display across devices.
+*/
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  font-style: italic;
+  background-color: var(--color-bg-secondary);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Image with figure */
+figure {
+  margin: var(--spacing-6) 0;
+  padding: 0;
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  margin: 0 0 var(--spacing-3) 0;
+}
+
+figcaption {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-tertiary);
+  text-align: center;
+  font-style: italic;
+  padding: var(--spacing-2) var(--spacing-3);
+}
+
+/* Picture element */
+picture {
+  display: block;
+}
+
+/* ==========================================================================
+   SECTION 16: MEDIA - VIDEO & IFRAME
+   ==========================================================================
+   
+   Define responsive video and embedded content styling.
+*/
+
+video,
+iframe {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  margin: var(--spacing-6) 0;
+}
+
+/* Responsive iframe wrapper */
+.iframe-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.iframe-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/* ==========================================================================
+   SECTION 17: MEDIA - SVG
+   ==========================================================================
+   
+   Define SVG styling for scalable vector graphics.
+*/
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  overflow: visible;
+  color: inherit;
+}
+
+/* Inline SVG */
+svg.inline {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* ==========================================================================
+   SECTION 18: SEMANTIC ELEMENTS - ARTICLE & SECTION
+   ==========================================================================
+   
+   Define default styling for semantic document structure elements.
+*/
+
+article {
+  margin: var(--spacing-8) 0;
+}
+
+section {
+  margin: var(--spacing-8) 0;
+}
+
+header {
+  margin: 0 0 var(--spacing-6) 0;
+}
+
+footer {
+  margin: var(--spacing-8) 0 0 0;
+  padding: var(--spacing-8) 0;
+  border-top: 1px solid var(--color-border-light);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+nav {
+  margin: var(--spacing-4) 0;
+}
+
+main {
+  margin: 0;
+}
+
+aside {
+  margin: var(--spacing-6) 0;
+  padding: var(--spacing-6);
+  background-color: var(--color-bg-secondary);
+  border-left: 4px solid var(--color-brand-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+}
+
+/* ==========================================================================
+   SECTION 19: CONTAINERS & LAYOUT CONSTRAINTS
+   ==========================================================================
+   
+   Define default container and wrapper styling for consistent layouts.
+*/
+
+/* Main content container */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+}
+
+/* Container breakpoints - Mobile-first */
+@media (min-width: 640px) {
+  .container {
+    padding: 0 var(--spacing-6);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: var(--container-5xl);
+    padding: 0 var(--spacing-8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: var(--container-6xl);
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: var(--container-7xl);
+  }
+}
+
+/* Content wrapper - Narrower max-width for readability */
+.content,
+article {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .content,
+  article {
+    max-width: var(--container-4xl);
+  }
+}
+
+/* Wrapper for page sections */
+.section-wrapper {
+  padding: var(--spacing-8) 0;
+}
+
+@media (max-width: 640px) {
+  .section-wrapper {
+    padding: var(--spacing-6) 0;
+  }
+}
+
+/* Full-width container - Spans entire viewport */
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* ==========================================================================
+   SECTION 20: RESPONSIVE TEXT & SPACING
+   ==========================================================================
+   
+   Adjust typography and spacing based on device size for optimal readability.
+*/
+
+/* Mobile-first base sizes */
+body {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+}
+
+/* Tablet and up - Slightly larger for better readability */
+@media (min-width: 768px) {
+  body {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* Large desktop - Generous spacing */
+@media (min-width: 1280px) {
+  h1 {
+    margin: 0 0 var(--spacing-8) 0;
+  }
+  
+  h2 {
+    margin: var(--spacing-10) 0 var(--spacing-6) 0;
+  }
+  
+  p {
+    margin: 0 0 var(--spacing-6) 0;
+  }
+}
+
+/* ==========================================================================
+   SECTION 21: PRINT STYLES
+   ==========================================================================
+   
+   Optimize base styles for print output.
+*/
+
+@media print {
+  /* Remove unnecessary elements */
+  nav,
+  .no-print,
+  [data-no-print] {
+    display: none !important;
+  }
+  
+  /* Optimize print typography */
+  body {
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+  }
+  
+  /* Improve link visibility */
+  a {
+    color: #0066ff;
+    text-decoration: underline;
+  }
+  
+  a[href]:after {
+    content: ' (' attr(href) ')';
+    word-break: break-word;
+  }
+  
+  /* Prevent orphaned headings */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+  }
+  
+  /* Prevent content from breaking */
+  p,
+  ul,
+  ol,
+  dl {
+    page-break-inside: avoid;
+  }
+  
+  /* Images within page constraints */
+  img {
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+  
+  /* Set print margins */
+  @page {
+    margin: 2cm;
+  }
+}
+
+/* ==========================================================================
+   END OF BASE STYLESHEET
+   ==========================================================================
+   
+   This stylesheet establishes global default styling for all HTML elements.
+   
+   It serves as the foundation upon which all component-specific styles
+   and utility classes are built.
+   
+   Key characteristics:
+   - Mobile-first responsive design
+   - WCAG 2.1 Level AA accessibility
+   - Semantic HTML support
+   - Consistent typography hierarchy
+   - Optimal readability and spacing
+   - Production-ready code quality
+   
+   Next steps in CSS architecture:
+   1. Component-specific stylesheets (.button, .card, etc.)
+   2. Utility classes (.mt-4, .flex, etc.)
+   3. Theme variations (dark mode, etc.)
+   4. Custom animations and effects
+   
+   For maintenance and updates, refer to the design system documentation.
+*/
